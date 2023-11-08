@@ -1,4 +1,6 @@
 <?php
+
+date_default_timezone_set('Europe/Dublin');
 class Team 
 {
     
@@ -14,13 +16,21 @@ class Team
     
     public function finalScore($hScore,$aScore)
     {
-           if $hScore>$aScore{
-               return $this->totalPoints+=3
-            else
-               return $this->totalPoints+=1
-           }
+        $this->totalgames++;
+        $this->totalGoals += $hScore;
+                
+        if ($hScore>$aScore){
+            $this->totalPoints+=3;
+        }
+        elseif($hScore==$aScore){
+            $this->totalPoints+=1;
+        }
                
-    return $this->totalGames+=1;
+    }
+    
+    public function getGoalAverage()
+    {
+        
     }
     
 }
